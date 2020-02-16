@@ -52,7 +52,8 @@ __Lead Dev__ : C'est bien pour cela que l'on va s'outiller avec un outil qui sai
 Cet outil s'appelle __prometheus__ , il est utilisable via une image docker qui :
 * s'appelle __prom/prometheus__
 * expose le port 9090
-* utilise un fichier de config qui se trouve en __/etc/prometheus/prometheus.yml__   , je t'ai placé le fichier prometheus.yml à la racine du repository
+* utilise un fichier de config qui se trouve en __/etc/prometheus/prometheus.yml__.
+* je t'ai placé le fichier prometheus.yml à la racine du repository. Je t'ai laissé une valeur à renseigner pour voir si tu est capable de renseigner ce qui est demandé.
 
 Tu sauras ajouter ce service dans le docker-compose.yml en mappant le port et le volume ?
 
@@ -60,6 +61,23 @@ __Vous__ : No problemo
 
 
 __Lead Dev__ : Ok, donc si tu as tout bien suivi tu dois trouver seul l'adresse sur laquelle tu peux accéder à l'interface de prometheus.
+
+__Vous__ : J'ai bien l'interface mais je ne comprend pas trop comment l'utiliser ...
+
+
+__Lead Dev__ : 
+Le principe est simple , dans le champ de saisie en haut de l'écran, tu indiques à prometheus la formule qu'il doit calculer à partir des mesures qu'il a à sa disposition.
+Les mesures disponibles sont dans la combo-box juste en dessous ( oui , l'interface est perfectible ...).
+
+Les mesures qui vont nous intéresser particulièrement sont :
+
+http_server_requests_seconds_count : pour chaque URL de notre API, le nombre d'appels qui ont été effectués
+http_server_requests_seconds_max   : pour chaque URL de notre API, le temps d'excution moyen
+http_server_requests_seconds_sum   : pour chaque URL de notre API, le cumul du temps d'exécution passé pour cette URL.
+
+Avec ces 3 mesures, la page de documention de l'API et un peu de déduction, tu dois être capable de trouver quelle fonction de l'API à des problèmes de performances !!!
+
+
 
 
 
