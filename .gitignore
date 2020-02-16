@@ -1,0 +1,46 @@
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### Eclipse ###
+/bin/
+
+### NPM ###
+/src/main/resources/static/node_modules/
+
+/src/main/resources/static/conf/
+
+/src/main/resources/application.properties
+src/test/resources/ghtest/
+src/test/resources/ghgtfstest/
+src/test/resources/ghgtfs/
+logs/
+
+gh/
+routing.osm.pbf
+
+node_modules/
+package-lock.json

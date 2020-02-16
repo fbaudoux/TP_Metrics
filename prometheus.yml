@@ -1,0 +1,11 @@
+scrape_configs:
+  - job_name: 'dojoservice'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+
+    metrics_path: '/actuator/prometheus'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ['REMPLACER_MOI_PAR_L_ADRESSE_DE_L_API.PENSEZ AU DOCKER COMPOSE:8085']

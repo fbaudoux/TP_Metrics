@@ -1,0 +1,96 @@
+##############################################################
+######################   CONFIGURATION  ######################
+######################     GENERALE     ######################
+##############################################################
+
+server.port = 8085
+
+####################################################################################################################
+#########################################       BASE DE DONNEES        #############################################
+####################################################################################################################
+
+spring.datasource.url=jdbc:oracle:thin:@192.168.5.2:1521/START7
+spring.datasource.username=dbo
+spring.datasource.password=dbo
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+#spring.datasource.url=jdbc:sqlserver://192.168.5.146;databaseName=StartSCO
+#spring.datasource.username=sa
+#spring.datasource.password=NvSql2006
+#spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+####################################################################################################################
+############################################       EPSG        #####################################################
+####################################################################################################################
+
+# Se référer à la projection paramétrée dans START : Paramètres -> Système (1) -> Système de projection -> Base de données
+
+#Lambert 93 => EPSG:2154
+#Lambert 1 Carto / Lambert 1 zone => EPSG:27571
+#Lambert 2 Carto / Lambert 2 zone / Lambert 2 étendu => EPSG:27572
+#Lambert 3 Carto / Lambert 3 zone => EPSG:27573
+#Lambert 4 Carto / Lambert 4 zone => EPSG:27574
+#Lambert Nord France => EPSG:27561
+#Lambert Centre France => EPSG:27562
+#Lambert Sud France => EPSG:27563
+#Lambert Corse => EPSG:27564
+#RGM 04-Mayotte / UTM zone 38S => EPSG:4471
+#RRAF-Guadeloupe / UTM zone 20N => EPSG:32620
+#RGFG95-Guyane / UTM zone 22N => EPSG:2972
+#National GB projection / British National Grid => EPSG:27700
+#Swiss CH1903+ / LV95 / MN95 => EPSG:2056
+#Swiss CH1903 / LV03 / MN03 => EPSG:21781
+#Lambert N. Calédonie / RGNC91-93 / Lambert New Caledonia => EPSG:3163
+#Lambert 93 Conique conforme 44 / RGF93 / CC44 (Monaco) => EPSG:3944
+#TM65 Irish Grid => EPSG:29902
+#ETRS89 / Belgian Lambert 2008 => EPSG:3812
+
+start.epsg=EPSG:27572
+
+####################################################################################################################
+############################################       GRAPHHOPPER        ##############################################
+####################################################################################################################
+
+graphhopper.gtfs.input.path=D:/clients/sdis74/gtfs.zip
+graphhopper.osm.input.path=D:/clients/sdis74/SFRS.osm.pbf
+graphhopper.osm.output.path=D:/clients/sdis74/17-export.osm.pbf
+graphhopper.graph.path=D:/clients/sdis74/gh
+graphhopper.gtfs.path=D:/clients/sdis74/ghgtfs
+
+#graphhopper.extent.maxX=335491
+#graphhopper.extent.maxY=2138046
+#graphhopper.extent.minX=324370
+#graphhopper.extent.minY=2130397
+
+####################################################################################################################
+############################################       AUTRE        ####################################################
+####################################################################################################################
+
+spring.jpa.properties.hibernate.default_schema=dbo
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.use_sql_comments=true
+
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.generate-ddl=false
+spring.jpa.open-in-view=false
+spring.jackson.serialization.FAIL_ON_EMPTY_BEANS=false
+spring.output.ansi.enabled=always
+management.endpoint.metrics.enabled=true
+management.endpoints.web.exposure.include=*
+management.endpoint.prometheus.enabled=true
+management.metrics.export.prometheus.enabled=true
+
+
+###TESTING###
+#spring.datasource.url=jdbc:h2:mem:TEST;MVCC=true;DB_CLOSE_DELAY=-1;MODE=Oracle
+#spring.datasource.username=sa
+#spring.datasource.password=
+#spring.datasource.driver-class-name=org.h2.Driver
+#spring.datasource.platform=h2
+######
+
+#logging.level.=DEBUG
+
+

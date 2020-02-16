@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  dojoservice:
+    container_name: dojoservice
+    image: dojoservice
+    ports:
+      - 8085:8085
